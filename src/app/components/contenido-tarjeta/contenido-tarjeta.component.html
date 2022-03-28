@@ -1,0 +1,23 @@
+<div class="card animated fadeIn fast col-md-6">
+  <hr />
+  <img
+    class="card-img-top img-fluid"
+    [src]="contenido.img"
+    [alt]="contenido.nombre"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ contenido.nombre }}</h5>
+    <p class="card-text">{{ contenido.desc }}</p>
+    <p class="card-text">
+      <small class="text-muted"> {{ contenido.creado }} </small>
+    </p>
+
+    <button
+      (click)="verContenido()"
+      type="button"
+      class="btn btn-outline-primary btn-block"
+    >
+      Ver más...
+    </button>
+  </div>
+</div>

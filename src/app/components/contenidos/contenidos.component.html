@@ -1,0 +1,40 @@
+<h1>Contenidos <small> Básicos y Avanzados</small></h1>
+
+<div class="card-columns">
+  <app-contenido-tarjeta
+    (contenidoSeleccionado)="verContenido($event)"
+    [contenido]="contenido"
+    [indice]="i"
+    *ngFor="let contenido of contenidos; let i = index"
+  ></app-contenido-tarjeta>
+</div>
+
+<!--
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100" *ngFor="let contenido of contenidos; let i = index">
+      <img
+        [src]="contenido.img"
+        class="card-img-top img-fluid"
+        [alt]="contenido.nombre"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ contenido.nombre }}</h5>
+        <p class="card-text">{{ contenido.desc }}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"> {{ contenido.creado }} </small>
+      </div>
+
+      <button
+        (click)="verContenido(i)"
+        type="button"
+        class="btn btn-outline-primary btn-block"
+      >
+        Ver más...
+      </button>
+      <!--<a [routerLink]="['/contenido', i]" class="btn btn-outline-primary"
+        >Ver más...</a
+    </div>
+  </div>
+</div>-->

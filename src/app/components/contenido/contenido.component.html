@@ -1,0 +1,34 @@
+<h1 class="animated fadeIn">
+  {{ contenido.nombre | uppercase }}
+</h1>
+<hr />
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+    <img [src]="contenido.img" class="img-fluid" [alt]="contenido.nomre" />
+    <br /><br />
+    <a [routerLink]="['/contenidos']" class="btn btn-outline-danger btn-block"
+      >Regresar</a
+    >
+  </div>
+
+  <div class="col-md-8">
+    <h4>Información</h4>
+    <h6>La categoría de este recurso es: {{ contenido.categoria }}</h6>
+    <p>{{ contenido.desc }}</p>
+    <p>Fecha de creación: {{ contenido.creado }}</p>
+    <h6>{{ contenido.estado }}</h6>
+    <img
+      *ngIf="contenido.estado == 'Disponible'"
+      class="img-logo"
+      src="assets/estados/comprobado.png"
+      alt=""
+    />
+    <img
+      *ngIf="contenido.estado == 'No Disponible'"
+      class="img-logo"
+      src="assets/estados/rechazado.png"
+      alt=""
+    />
+  </div>
+</div>
